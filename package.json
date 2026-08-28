@@ -1,5 +1,5 @@
 {
-  "name": "violation-overseer",
+  "name": "overseer",
   "version": "1.0.0",
   "description": "Overseer — Discord-Integrated AI Management Bot",
   "main": "dist/index.js",

@@ -3,10 +3,10 @@
 AI-powered Discord management bot. Mention the bot, tell it what to do in natural language — it handles the rest.
 
 ```
-@Overseer ban John for spamming
-@Overseer kick Alex
-@Overseer timeout Mike 30s
-@Overseer lock #general
+@Overseer ban John for spam, delete 7 days of messages
+@Overseer kick Alex for spamming
+@Overseer timeout Mike for 30 seconds
+@Overseer lock the general channel
 ```
 
 Every destructive action goes through a confirmation system before execution. The AI **never** acts on its own.
@@ -16,7 +16,7 @@ Every destructive action goes through a confirmation system before execution. Th
 ```bash
 # 1. Clone & install
 git clone <repo>
-cd violation-overseer
+cd overseer
 npm install
 
 # 2. Configure
@@ -46,9 +46,6 @@ Required intents:
 - **Server Members Intent** (privileged)
 - **Message Content Intent** (privileged)
 
-Required permissions:
-- Administrator (or individual permissions per tool)
-
 ## Docker
 
 ```bash
@@ -62,7 +59,7 @@ docker run --env-file .env overseer
 User message → AI (tool calling) → ActionManager → Permission check → Confirmation → Execute
 ```
 
-- **19 tools**: ban, kick, timeout, warn, purge, role CRUD, channel CRUD, server settings
+- **tools**: ban, kick, timeout, warn, purge, role CRUD, channel CRUD, server settings
 - **i18n**: Auto-detects server language (EN/TR)
 - **Security**: Every action requires confirmation via button click
 - **Context-aware**: Remembers recent conversation per channel
